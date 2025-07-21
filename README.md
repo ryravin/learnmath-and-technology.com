@@ -1,1 +1,1 @@
-# learnmath-and-technology.com
+# learnmath-and-technology
