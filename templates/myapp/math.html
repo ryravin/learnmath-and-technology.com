@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+<!------math.html-->
+{% block contents %}
+<h2>សៀវភៅពី DB</h2>
+<div class="features-grid">
+    {% for book in books %}
+        <div class="feature-card">
+            <h3>{{ book.title }} </h3>
+            <a href="{{ book.link }}" target="_blank">
+                <img class="img1" src="{{ book.image.url }}" alt="{{ book.title }}">
+            </a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

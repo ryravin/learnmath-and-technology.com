@@ -1,0 +1,41 @@
+{% load static %}
+<!---base.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}KhmerLean{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'Css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'myapp/images/favicon.ico' %}">
+
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <div class="logo-icon">រៀន</div>
+                <div class="logo-text">Lean Math and Technology</div>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="{% url 'index' %}">ទំព័រដើម</a></li>
+                <li><a href="{% url 'math' %}">គណិតវិទ្យា</a></li>
+                <li><a href="{% url 'technology' %}">បច្ចេកវិទ្យា</a></li>
+                <li><a href="{% url 'bacci' %}">បាក់ឌុប</a></li>
+                <li><a href="{% url 'lean_ai' %}">រៀនAI</a></li>
+                <li><a href="{% url 'login' %}" class="login-btn">Login</a></li>
+
+            </ul>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+        </nav>
+    </header>
+    
+    {% block contents %}
+    <!-- Content pages will override this -->
+    {% endblock %}
+    {% include 'myapp/footer.html' %}
+
+
+    <script src="{% static  'Js/main.js' %}"></script>
+</body>
+</html>

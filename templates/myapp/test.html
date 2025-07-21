@@ -1,0 +1,296 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    សំណួរ Quiz
+{% endblock %}
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+{% block contents %}
+<style>
+    body {
+  font-family: 'Khmer UI', sans-serif;
+  background: #f9f9f9;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+}
+
+.question-block {
+  margin-bottom: 25px;
+  margin-top: 50px;
+}
+
+button {
+  padding: 10px 20px;
+  background: #4CAF50;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #45a049;
+}
+
+.result-box {
+  margin-top: 20px;
+  padding: 15px;
+  background: #e9ffe9;
+  border: 1px solid #4CAF50;
+  border-radius: 8px;
+  font-size: 18px;
+}
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+    }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8fafc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #64748b;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 6px;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+            background: #f1f5f9;
+        }
+        h1{
+            margin-top: 20px;
+        }
+        
+         
+</style>
+
+<div class="container">
+    <h1>💡 ប្រឡងតេស្តសមត្ថភាព</h1>
+    <form id="quizForm">
+    
+
+      <div class="question-block">
+        <p>2. តើគេសម្គាល់រុក្ខជាតិឌីកូទីលេដូនបានដោយសារអ្វីខ្លះ</p>
+        <label><input type="radio" name="q2" value="A"> Styling</label><br>
+        <label><input type="radio" name="q2" value="B"> Logic</label><br>
+        <label><input type="radio" name="q2" value="C"> Markup structure</label><br>
+        <label><input type="radio" name="q2" value="D"> Database</label><br>
+      </div>
+
+      <div class="question-block">
+        <p>3. CSS សម្រាប់?</p>
+        <label><input type="radio" name="q3" value="A"> Styling</label><br>
+        <label><input type="radio" name="q3" value="B"> Logic</label><br>
+        <label><input type="radio" name="q3" value="C"> Markup structure</label><br>
+        <label><input type="radio" name="q3" value="D"> Database</label><br>
+      </div>
+      <div class="question-block">
+        <p>3. CSS សម្រាប់?</p>
+        <label><input type="radio" name="q3" value="A"> Styling</label><br>
+        <label><input type="radio" name="q3" value="B"> Logic</label><br>
+        <label><input type="radio" name="q3" value="C"> Markup structure</label><br>
+        <label><input type="radio" name="q3" value="D"> Database</label><br>
+      </div>
+
+      <div class="question-block">
+        <p>3. CSS សម្រាប់?</p>
+        <label><input type="radio" name="q3" value="A"> Styling</label><br>
+        <label><input type="radio" name="q3" value="B"> Logic</label><br>
+        <label><input type="radio" name="q3" value="C"> Markup structure</label><br>
+        <label><input type="radio" name="q3" value="D"> Database</label><br>
+      </div>
+
+      <div class="question-block">
+        <p>3. CSS សម្រាប់?</p>
+        <label><input type="radio" name="q3" value="A"> Styling</label><br>
+        <label><input type="radio" name="q3" value="B"> Logic</label><br>
+        <label><input type="radio" name="q3" value="C"> Markup structure</label><br>
+        <label><input type="radio" name="q3" value="D"> Database</label><br>
+      </div>
+
+      <div class="question-block">
+        <p>3. CSS សម្រាប់?</p>
+        <label><input type="radio" name="q3" value="A"> Styling</label><br>
+        <label><input type="radio" name="q3" value="B"> Logic</label><br>
+        <label><input type="radio" name="q3" value="C"> Markup structure</label><br>
+        <label><input type="radio" name="q3" value="D"> Database</label><br>
+      </div>
+
+      <div class="question-block">
+        <p>3. CSS សម្រាប់?</p>
+        <label><input type="radio" name="q3" value="A"> Styling</label><br>
+        <label><input type="radio" name="q3" value="B"> Logic</label><br>
+        <label><input type="radio" name="q3" value="C"> Markup structure</label><br>
+        <label><input type="radio" name="q3" value="D"> Database</label><br>
+      </div>
+
+      <div class="question-block">
+        <p>3. CSS សម្រាប់?</p>
+        <label><input type="radio" name="q3" value="A"> Styling</label><br>
+        <label><input type="radio" name="q3" value="B"> Logic</label><br>
+        <label><input type="radio" name="q3" value="C"> Markup structure</label><br>
+        <label><input type="radio" name="q3" value="D"> Database</label><br>
+      </div>
+
+      <div class="question-block">
+        <p>3. CSS សម្រាប់?</p>
+        <label><input type="radio" name="q3" value="A"> Styling</label><br>
+        <label><input type="radio" name="q3" value="B"> Logic</label><br>
+        <label><input type="radio" name="q3" value="C"> Markup structure</label><br>
+        <label><input type="radio" name="q3" value="D"> Database</label><br>
+      </div>
+
+      <div class="question-block">
+        <p>3. CSS សម្រាប់?</p>
+        <label><input type="radio" name="q3" value="A"> Styling</label><br>
+        <label><input type="radio" name="q3" value="B"> Logic</label><br>
+        <label><input type="radio" name="q3" value="C"> Markup structure</label><br>
+        <label><input type="radio" name="q3" value="D"> Database</label><br>
+      </div>
+
+      <div class="question-block">
+        <p>3. CSS សម្រាប់?</p>
+        <label><input type="radio" name="q3" value="A"> Styling</label><br>
+        <label><input type="radio" name="q3" value="B"> Logic</label><br>
+        <label><input type="radio" name="q3" value="C"> Markup structure</label><br>
+        <label><input type="radio" name="q3" value="D"> Database</label><br>
+      </div>
+
+      <div class="question-block">
+        <p>3. CSS សម្រាប់?</p>
+        <label><input type="radio" name="q3" value="A"> Styling</label><br>
+        <label><input type="radio" name="q3" value="B"> Logic</label><br>
+        <label><input type="radio" name="q3" value="C"> Markup structure</label><br>
+        <label><input type="radio" name="q3" value="D"> Database</label><br>
+      </div>
+
+      <button type="submit">បញ្ជូន</button>
+    </form>
+
+    <div id="result" class="result-box"></div>
+</div>
+
+<script>
+document.getElementById('quizForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const answers = {
+    q1: 'B',
+    q2: 'C',
+    q3: 'A'
+  };
+
+  let score = 0;
+  let total = Object.keys(answers).length;
+
+  for (let key in answers) {
+    const selected = document.querySelector(`input[name="${key}"]:checked`);
+    const allOptions = document.querySelectorAll(`input[name="${key}"]`);
+
+    allOptions.forEach(opt => {
+      const label = opt.parentElement;
+      label.style.fontWeight = 'normal';
+      label.style.color = '#000';
+
+      if (opt.value === answers[key]) {
+        label.innerHTML += ' ✅';
+        label.style.color = 'green';
+      }
+
+      if (selected && opt === selected && opt.value !== answers[key]) {
+        label.innerHTML += ' ❌';
+        label.style.color = 'red';
+      }
+    });
+
+    if (selected && selected.value === answers[key]) {
+      score++;
+    }
+  }
+
+  const resultBox = document.getElementById('result');
+  resultBox.innerHTML = `📊 អ្នកបានឆ្លើយត្រឹមត្រូវ <strong>${score}</strong> នៃ <strong>${total}</strong> សំណួរ។`;
+});
+</script>
+{% endblock %}

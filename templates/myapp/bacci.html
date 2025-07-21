@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+<!------technology.html-->
+{% block title %}បាក់ឌុប{% endblock %}
+{% block contents %}
+
+<h2>💻 សៀវភៅ និង វិញ្ញាសារត្រៀមប្រឡងបាក់ឌុប</h2>
+<div class="features-grid">
+    {% for book in books %}
+        <div class="feature-card">
+            <h3>{{ book.title }}</h3>
+            <a href="{{ book.link }}" target="_blank">
+                <img class="img1" src="{{ book.image.url }}" alt="{{ book.title }}">
+            </a>
+        </div>
+    {% empty %}
+        <p>មិនមានសៀវភៅ!</p>
+    {% endfor %}
+</div>
+{% endblock %}
+

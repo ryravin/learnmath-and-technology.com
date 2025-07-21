@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Page</title>
+
+  <!-- ✅ jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    @keyframes borderAnimation {
+      0% {
+        border-color: rgb(30, 156, 156) rgb(220, 80, 80) yellowgreen #008000;
+      }
+      25% {
+        border-color: red blue green orange;
+      }
+      50% {
+        border-color: purple cyan lime rgb(152, 38, 131);
+      }
+      75% {
+        border-color: gold pink navy rgb(162, 3, 3);
+      }
+      100% {
+        border-color: rgb(30, 156, 156) rgb(220, 80, 80) yellowgreen #008000;
+      }
+    }
+
+    #login-box {
+      border: 2px solid;
+      border-color: rgb(52, 24, 97) rgb(220, 80, 80) yellowgreen #008000;
+      width: 330px;
+      margin: 70px auto;
+      border-radius: 10px;
+      animation: borderAnimation 4s infinite linear;
+      background-color: bisque;
+      transition: box-shadow 0.4s ease;
+      padding: 20px;
+    }
+
+    input {
+      width: 300px;
+      height: 30px;
+      font-size: 10px;
+      border: 1px solid blue;
+      text-align: center;
+    }
+
+    form {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    button {
+      width: 300px;
+      padding: 8px;
+      background-color: dodgerblue;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    h1 {
+      color: rgb(255, 127, 229);
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .errorlist {
+      color: red;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    a {
+      font-size: 14px;
+      display: inline-block;
+      margin: 10px;
+      text-decoration: none;
+    }
+    label{
+        margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div id="login-box">
+    <h1>Login Page</h1>
+
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      <br />
+ <label>Email</label> {{ form.username }} 
+     <br /><br />
+ <label>password</label> {{ form.password }}
+      <br /><br />
+        <button type="submit">Login</button>
+
+    </form>
+
+    {% if messages %}
+      <div style="color: red; text-align: center; margin-top: 10px;">
+        {% for message in messages %}
+          {{ message }}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <div style="text-align: center;">
+      <a href="#">Forget Password?</a>
+      <a href="{% url 'index' %}">Back to Home</a>
+    </div>
+  </div>
+
+  <!-- ✅ jQuery Border Click Effect -->
+  <script>
+    $(document).ready(function(){
+      $('#login-box').click(function(){
+        $(this).css("box-shadow", "0 0 20px 5px rgba(0, 123, 255, 0.7)");
+        setTimeout(() => {
+          $(this).css("box-shadow", "none");
+        }, 500);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+<!------technology.html-->
+{% block title %}Technology Books{% endblock %}
+{% block contents %}
+<h2>💻 សៀវភៅបច្ចេកវិទ្យា</h2>
+<div class="features-grid">
+    {% for book in books %}
+        <div class="feature-card">
+            <h3>{{ book.title }}</h3>
+            <a href="{{ book.link }}" target="_blank">
+                <img class="img1" src="{{ book.image.url }}" alt="{{ book.title }}">
+            </a>
+        </div>
+    {% empty %}
+        <p>មិនមានសៀវភៅ!</p>
+    {% endfor %}
+</div>
+{% endblock %}
+

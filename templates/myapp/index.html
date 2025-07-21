@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    ទំព័រដើម
+{% endblock %}
+
+{% block contents %}
+<main>
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>រៀនគណិតវិទ្យា និង បច្ចេកវិទ្យា</h1>
+                    <p>
+                        ការរៀនសូត្រត្រូវការការព្យាយាម គ្មានអ្នកណារៀនតែមួយថ្ងៃអាចចេះបានឡើយ។ 
+                        បើអ្នកគិតថាការរៀនហត់ សូមគិតដល់ឪពុកម្តាយអ្នក ដែលកំពុងរកលុយឱ្យអ្នករៀន។
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="{% url 'bacci' %}" class="btn-primary">
+                            Start Learning <span>→</span>
+                        </a>
+                        <a href="{% url 'test' %}" class="btn-secondary">ធ្វេីតេស្តសមត្ថភាព</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container" id="home">
+            <div class="section-header">
+                <h2>រៀនពេញមួយជីវិត</h2>
+                <p>ការសិក្សារៀនសូត្រគឺមិនចេះចប់ឡើយ សម្រាប់អ្នកសិក្សា កាន់តែរៀនកាន់តែចេះ។</p>
+              
+            </div>
+        </div>
+
+
+    </section>
+</main>
+    {% include 'myapp/image.html' %}
+
+{% endblock %}
